@@ -66,6 +66,12 @@ export function getPayload(inputs: Inputs): Object {
         }
     }
 
+    if (inputs.thumbnail) {
+        embed.thumbnail = {
+            url: inputs.image
+        }
+    }
+
     if (!inputs.noprefix) {
         embed.title = statusOpts[inputs.status].status + (embed.title ? `: ${embed.title}` : '')
     }
@@ -114,6 +120,10 @@ export function getPayload(inputs: Inputs): Object {
     }
     if (inputs.avatar_url) {
         discord_payload.avatar_url = inputs.avatar_url
+    }
+
+    if (inputs.pre_message) {
+        discord_payload.content = inputs.pre_message
     }
 
     return discord_payload

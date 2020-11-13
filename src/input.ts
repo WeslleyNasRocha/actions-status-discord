@@ -5,8 +5,10 @@ export interface Inputs {
     readonly webhooks: string[]
     readonly status:string
     readonly description: string
+    readonly pre_message: string
     readonly title: string
     readonly image: string
+    readonly thumbnail: string
     readonly color: number
     readonly username: string
     readonly avatar_url: string
@@ -56,8 +58,10 @@ export function getInputs(): Inputs {
         webhooks: webhooks,
         status: core.getInput('status').trim().toLowerCase(),
         description: core.getInput('description').trim(),
+        pre_message: core.getInput('pre_message').trim(),
         title: (core.getInput('title') || core.getInput('job')).trim(),
         image: core.getInput('image').trim(),
+        thumbnail: core.getInput('thumbnail').trim(),
         color: parseInt(core.getInput('color')),
         username: core.getInput('username').trim(),
         avatar_url: core.getInput('avatar_url').trim(),

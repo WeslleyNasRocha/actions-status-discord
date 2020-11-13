@@ -23,6 +23,12 @@ inputs:
   image:
     description: "Image attached to the message"
     required: false
+  thumbnail:
+    description: "Thumbnail attached to the message"
+    required: false
+  pre_message:
+    description: "Text to be shown before the card"
+    required: false
   color:
     description: "Overrides Discord embed color"
     required: false
